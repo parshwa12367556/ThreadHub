@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - FabricFashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="shopstyle.css">
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-text">
+                <span>Free shipping on orders over $50</span>
+            </div>
+            <div class="top-bar-links">
+                <a href="storestyle.css">Store Locator</a>
+                <a href="help.html">Help</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-tshirt"></i>
+                    <h1>Fabric<span>Fashion</span></h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="#"><i class="far fa-user"></i></a>
+                    <a href="#">
+                        <i class="far fa-heart"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li>
+                        <a href="categories.html">Categories <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="pants.html">Pants</a></li>
+                            <li><a href="shirt.html">Shirts</a></li>
+                            <li><a href="womensware.html">Women's Wear</a></li>
+                            <li><a href="mensware.html">Men's Wear</a></li>
+                            <li><a href="kidsware.html">Kids' Collection</a></li>
+                            <li><a href="allcategories.html">All Categories</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container breadcrumb-content">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="shop.html">Shop</a>
+        </div>
+    </div>
+
+    <!-- Shop Content -->
+    <div class="container shop-container">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+            <div class="filter-group">
+                <div class="filter-title">
+                    <h3>Categories</h3>
+                    <button class="clear-filter">Clear</button>
+                </div>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-1">
+                        <label for="category-1">
+                            Men's Wear
+                            <span class="filter-count">(42)</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-2">
+                        <label for="category-2">
+                            Women's Wear
+                            <span class="filter-count">(56)</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-3">
+                        <label for="category-3">
+                            Kids' Collection
+                            <span class="filter-count">(28)</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-4">
+                        <label for="category-4">
+                            Accessories
+                            <span class="filter-count">(15)</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-5">
+                        <label for="category-5">
+                            Traditional Wear
+                            <span class="filter-count">(22)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">
+                    <h3>Price Range</h3>
+                </div>
+                <div class="price-range">
+                    <div class="price-inputs">
+                        <div class="price-input">
+                            <input type="number" placeholder="Min" value="0">
+                        </div>
+                        <div class="price-input">
+                            <input type="number" placeholder="Max" value="200">
+                        </div>
+                    </div>
+                    <input type="range" class="price-slider" min="0" max="500" value="200">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">
+                    <h3>Colors</h3>
+                    <button class="clear-filter">Clear</button>
+                </div>
+                <div class="color-options">
+                    <div class="color-option active" style="background-color: #8b5a2b;" title="Brown"></div>
+                    <div class="color-option" style="background-color: #000000;" title="Black"></div>
+                    <div class="color-option" style="background-color: #ffffff; border: 1px solid #e0e0e0;"
+                        title="White"></div>
+                    <div class="color-option" style="background-color: #4a6de5;" title="Blue"></div>
+                    <div class="color-option" style="background-color: #e74c3c;" title="Red"></div>
+                    <div class="color-option" style="background-color: #2ecc71;" title="Green"></div>
+                    <div class="color-option" style="background-color: #f1c40f;" title="Yellow"></div>
+                    <div class="color-option" style="background-color: #9b59b6;" title="Purple"></div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">
+                    <h3>Size</h3>
+                    <button class="clear-filter">Clear</button>
+                </div>
+                <div class="size-options">
+                    <div class="size-option active">XS</div>
+                    <div class="size-option">S</div>
+                    <div class="size-option">M</div>
+                    <div class="size-option">L</div>
+                    <div class="size-option">XL</div>
+                    <div class="size-option">XXL</div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">
+                    <h3>Brand</h3>
+                    <button class="clear-filter">Clear</button>
+                </div>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="brand-1">
+                        <label for="brand-1">
+                            Cotton Comfort
+                            <span class="filter-count">(24)</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="brand-2">
+                        <label for="brand-2">
+                            Silk Elegance
+                            <span class="filter-count">(18)</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="brand-3">
+                        <label for="brand-3">
+                            Linen Luxe
+                            <span class="filter-count">(15)</span>
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="brand-4">
+                        <label for="brand-4">
+                            Denim Dynasty
+                            <span class="filter-count">(22)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn" style="width: 100%;">Apply Filters</button>
+        </aside>
+
+        <!-- Products Section -->
+        <section class="products-section">
+            <div class="products-header">
+                <div class="products-title">
+                    <h2>All Products</h2>
+                    <p>Showing 1-12 of 163 products</p>
+                </div>
+                <div class="view-options">
+                    <div class="view-toggle">
+                        <button class="view-grid active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-list" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    <div class="sort-options">
+                        <select>
+                            <option>Sort by: Featured</option>
+                            <option>Sort by: Price Low to High</option>
+                            <option>Sort by: Price High to Low</option>
+                            <option>Sort by: Newest</option>
+                            <option>Sort by: Rating</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid View -->
+            <div class="products-grid view-content active">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="Premium Cotton Shirt">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Cotton Shirt</h3>
+                        <div class="product-category">Men's Wear</div>
+                        <div class="product-price">
+                            <span class="current-price">$45.99</span>
+                            <span class="original-price">$59.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80"
+                            alt="Linen Dress">
+                    </div>
+                    <div class="product-info">
+                        <h3>Elegant Linen Dress</h3>
+                        <div class="product-category">Women's Wear</div>
+                        <div class="product-price">
+                            <span class="current-price">$79.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=699&q=80"
+                            alt="Denim Jeans">
+                        <span class="product-badge">Sale</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Denim Jeans</h3>
+                        <div class="product-category">Men's Wear</div>
+                        <div class="product-price">
+                            <span class="current-price">$39.99</span>
+                            <span class="original-price">$49.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                            alt="Silk Scarf">
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Silk Scarf</h3>
+                        <div class="product-category">Accessories</div>
+                        <div class="product-price">
+                            <span class="current-price">$29.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=704&q=80"
+                            alt="Kids T-Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kids Cotton T-Shirt</h3>
+                        <div class="product-category">Kids' Collection</div>
+                        <div class="product-price">
+                            <span class="current-price">$19.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1583496661160-fb5886a13d77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Wool Sweater">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Warm Wool Sweater</h3>
+                        <div class="product-category">Women's Wear</div>
+                        <div class="product-price">
+                            <span class="current-price">$65.99</span>
+                            <span class="original-price">$79.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products List View -->
+            <div class="products-list view-content">
+                <div class="product-list-item">
+                    <div class="list-product-img">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="Cotton Shirt">
+                    </div>
+                    <div class="list-product-info">
+                        <h3>Premium Cotton Shirt</h3>
+                        <div class="product-category">Men's Wear</div>
+                        <div class="list-product-price">$45.99 <span class="original-price">$59.99</span></div>
+                        <p>Experience ultimate comfort with our premium cotton shirt. Made from 100% organic cotton,
+                            this shirt offers breathability and style for any occasion.</p>
+                        <div class="list-product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="btn-outline">View Details</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-list-item">
+                    <div class="list-product-img">
+                        <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80"
+                            alt="Linen Dress">
+                    </div>
+                    <div class="list-product-info">
+                        <h3>Elegant Linen Dress</h3>
+                        <div class="product-category">Women's Wear</div>
+                        <div class="list-product-price">$79.99</div>
+                        <p>This elegant linen dress combines style and comfort perfectly. The breathable fabric and
+                            flattering cut make it ideal for summer events and casual outings.</p>
+                        <div class="list-product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="btn-outline">View Details</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <ul class="pagination-list">
+                    <li class="pagination-item">
+                        <a href="#"><i class="fas fa-chevron-left"></i></a>
+                    </li>
+                    <li class="pagination-item active">
+                        <a href="#">1</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#">2</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#">3</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#">4</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#">5</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#"><i class="fas fa-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div> 
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>FabricFashion</h3>
+                    <p>Your one-stop destination for premium quality textiles and fashion clothing for the entire
+                        family.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/mr_parshwa_patil/#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com/mr_parshwa_patil/#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/mr_parshwa_patil/#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="mens.html">Men's Wear</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="return.html">Return Policy</a></li>
+                        <li><a href="sizeguide.html">Size Guide</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i>Patil Galli Borgaon</li>
+                        <li><i class="fas fa-phone"></i> +91 7026670451</li>
+                        <li><i class="fas fa-envelope"></i>fabricfashion@gamil.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 9:00 AM - 11:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 FabricFashion. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Shop Page JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            // View Toggle Functionality
+            const viewGridBtn = document.querySelector('.view-grid');
+            const viewListBtn = document.querySelector('.view-list');
+            const viewContents = document.querySelectorAll('.view-content');
+
+            viewGridBtn.addEventListener('click', function () {
+                viewGridBtn.classList.add('active');
+                viewListBtn.classList.remove('active');
+
+                viewContents.forEach(content => {
+                    if (content.classList.contains('products-grid')) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+
+            viewListBtn.addEventListener('click', function () {
+                viewListBtn.classList.add('active');
+                viewGridBtn.classList.remove('active');
+
+                viewContents.forEach(content => {
+                    if (content.classList.contains('products-list')) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+
+            // Color Filter Selection
+            const colorOptions = document.querySelectorAll('.color-option');
+
+            colorOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    colorOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Size Filter Selection
+            const sizeOptions = document.querySelectorAll('.size-option');
+
+            sizeOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    sizeOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Clear Filter Buttons
+            const clearFilterButtons = document.querySelectorAll('.clear-filter');
+
+            clearFilterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const filterGroup = this.closest('.filter-group');
+                    const checkboxes = filterGroup.querySelectorAll('input[type="checkbox"]');
+                    const colorOptions = filterGroup.querySelectorAll('.color-option');
+                    const sizeOptions = filterGroup.querySelectorAll('.size-option');
+
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+
+                    if (colorOptions.length > 0) {
+                        colorOptions.forEach(option => option.classList.remove('active'));
+                        colorOptions[0].classList.add('active');
+                    }
+
+                    if (sizeOptions.length > 0) {
+                        sizeOptions.forEach(option => option.classList.remove('active'));
+                        sizeOptions[0].classList.add('active');
+                    }
+                });
+            });
+
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartCount = document.querySelector('.cart-count');
+            let count = 3;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    count++;
+                    cartCount.textContent = count;
+
+                    // Simple animation
+                    this.textContent = 'Added!';
+                    this.style.backgroundColor = '#4CAF50';
+
+                    setTimeout(() => {
+                        this.textContent = 'Add to Cart';
+                        this.style.backgroundColor = '';
+                    }, 1500);
+                });
+            });
+
+            // Wishlist functionality
+            const wishlistButtons = document.querySelectorAll('.wishlist');
+
+            wishlistButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const icon = this.querySelector('i');
+
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        icon.style.color = '#e74c3c';
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        icon.style.color = '';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
