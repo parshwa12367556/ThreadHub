@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Categories - FabricFashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #8b5a2b;
+            --secondary: #d4b896;
+            --accent: #c19a6b;
+            --dark: #3e2723;
+            --light: #f5f5f5;
+            --gray: #757575;
+            --border: #e0e0e0;
+            --mens-color: #3498db;
+            --womens-color: #e84393;
+            --kids-color: #6ec4e8;
+            --accessories-color: #f1c40f;
+        }
+
+        body {
+            background-color: #fefefe;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-mens {
+            background-color: var(--mens-color);
+        }
+
+        .btn-womens {
+            background-color: var(--womens-color);
+        }
+
+        .btn-kids {
+            background-color: var(--kids-color);
+        }
+
+        .btn-accessories {
+            background-color: var(--accessories-color);
+            color: var(--dark);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-bar {
+            background-color: var(--dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .top-bar-links a {
+            margin-left: 15px;
+        }
+
+        .main-header {
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            font-size: 28px;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .search-bar {
+            display: flex;
+            width: 40%;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-actions a {
+            margin-left: 20px;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent);
+            color: white;
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links>li>a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links>li>a:hover {
+            background-color: var(--accent);
+        }
+
+        .dropdown {
+            position: absolute;
+            background-color: white;
+            width: 200px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 4px 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .nav-links li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown li a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--dark);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .dropdown li:last-child a {
+            border-bottom: none;
+        }
+
+        .dropdown li a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            background-color: var(--light);
+        }
+
+        .breadcrumb-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb a {
+            color: var(--gray);
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            color: var(--gray);
+        }
+
+        /* All Categories Header */
+        .categories-header {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .categories-title {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .categories-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Main Categories Grid */
+        .main-categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .main-category {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .main-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .main-category-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .main-category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .main-category:hover .main-category-img img {
+            transform: scale(1.05);
+        }
+
+        .main-category-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-category-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .main-category-desc {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        /* Subcategories Section */
+        .subcategories-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--dark);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .category-tab {
+            padding: 15px 30px;
+            cursor: pointer;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .category-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .subcategories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .subcategory-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .subcategory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .subcategory-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .subcategory-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .subcategory-card:hover .subcategory-img img {
+            transform: scale(1.05);
+        }
+
+        .subcategory-info {
+            padding: 20px;
+        }
+
+        .subcategory-name {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .subcategory-count {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* All Categories List */
+        .all-categories {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+
+        .all-categories-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--dark);
+        }
+
+        .categories-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .category-column h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--primary);
+        }
+
+        .category-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .category-column ul li a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+
+        .category-column ul li a:hover {
+            color: var(--primary);
+        }
+
+        .category-count {
+            background-color: var(--light);
+            color: var(--gray);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        /* Featured Products */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .original-price {
+            font-size: 14px;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .add-to-cart {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--accent);
+        }
+
+        .wishlist {
+            background: none;
+            border: none;
+            color: var(--gray);
+            font-size: 18px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .wishlist:hover {
+            color: var(--accent);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--secondary);
+            padding: 60px 0;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .newsletter h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--gray);
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-categories {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .subcategories-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .categories-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+            }
+
+            .main-categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .subcategories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categories-list {
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .category-tabs {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .subcategories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-form button {
+                border-radius: 4px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-text">
+                <span>Free shipping on orders over $50</span>
+            </div>
+            <div class="top-bar-links">
+                <a href="store-locator.html">Store Locator</a>
+                <a href="help.html">Help</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-tshirt"></i>
+                    <h1>Fabric<span>Fashion</span></h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="#"><i class="far fa-user"></i></a>
+                    <a href="#">
+                        <i class="far fa-heart"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li>
+                        <a href="categories.html" class="active">Categories <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="pants.html">Pants</a></li>
+                            <li><a href="shirts.html">Shirts</a></li>
+                            <li><a href="womens.html">Women's Wear</a></li>
+                            <li><a href="mens.html">Men's Wear</a></li>
+                            <li><a href="kids.html">Kids' Collection</a></li>
+                            <li><a href="allcategories.html">All Categories</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container breadcrumb-content">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="categories.html">Categories</a>
+            <span>/</span>
+            <a href="allcategories.html" class="active">All Categories</a>
+        </div>
+    </div>
+
+    <!-- All Categories Page Header -->
+    <div class="container categories-header">
+        <h1 class="categories-title">All Categories</h1>
+        <p class="categories-subtitle">Browse our complete collection of textile products organized by category. Find
+            exactly what you're looking for with our comprehensive category navigation.</p>
+    </div>
+
+    <!-- Main Categories -->
+    <div class="container">
+        <div class="main-categories">
+            <div class="main-category">
+                <div class="category-badge">Popular</div>
+                <div class="main-category-img">
+                    <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80"
+                        alt="Women's Wear">
+                </div>
+                <div class="main-category-content">
+                    <h3 class="main-category-title">Women's Wear</h3>
+                    <p class="main-category-desc">Elegant dresses, tops, skirts and more for the modern woman</p>
+                    <a href="womensware.html" class="btn btn-womens">Shop Now</a>
+                </div>
+            </div>
+            <div class="main-category">
+                <div class="main-category-img">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                        alt="Men's Wear">
+                </div>
+                <div class="main-category-content">
+                    <h3 class="main-category-title">Men's Wear</h3>
+                    <p class="main-category-desc">Sophisticated shirts, pants, and outerwear for men</p>
+                    <a href="mensware.html" class="btn btn-mens">Shop Now</a>
+                </div>
+            </div>
+            <div class="main-category">
+                <div class="category-badge">New</div>
+                <div class="main-category-img">
+                    <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80"
+                        alt="Kids' Collection">
+                </div>
+                <div class="main-category-content">
+                    <h3 class="main-category-title">Kids' Collection</h3>
+                    <p class="main-category-desc">Adorable and comfortable clothing for children of all ages</p>
+                    <a href="kidsware.html" class="btn btn-kids">Shop Now</a>
+                </div>
+            </div>
+            <div class="main-category">
+                <div class="main-category-img">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                        alt="Accessories">
+                </div>
+                <div class="main-category-content">
+                    <h3 class="main-category-title">Accessories</h3>
+                    <p class="main-category-desc">Scarves, bags, and other fashion accessories</p>
+                    <a href="shop.html" class="btn btn-accessories">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subcategories Section -->
+    <div class="container subcategories-section">
+        <div class="section-title">
+            <h2>Browse Subcategories</h2>
+        </div>
+
+        <div class="category-tabs">
+            <div class="category-tab active" data-category="women">Women's Wear</div>
+            <div class="category-tab" data-category="men">Men's Wear</div>
+            <div class="category-tab" data-category="kids">Kids' Collection</div>
+            <div class="category-tab" data-category="accessories">Accessories</div>
+        </div>
+
+        <!-- Women's Wear Subcategories -->
+        <div class="subcategories-grid active" id="women-subcategories">
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80"
+                        alt="Dresses">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Dresses</h3>
+                    <div class="subcategory-count">52 Products</div>
+                </div>
+            </div>
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1583496661160-fb5886a13d77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        alt="Tops">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Tops</h3>
+                    <div class="subcategory-count">48 Products</div>
+                </div>
+            </div>
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        alt="Skirts">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Skirts</h3>
+                    <div class="subcategory-count">36 Products</div>
+                </div>
+            </div>
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=705&q=80"
+                        alt="Traditional Wear">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Traditional Wear</h3>
+                    <div class="subcategory-count">28 Products</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Men's Wear Subcategories -->
+        <div class="subcategories-grid" id="men-subcategories">
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                        alt="Shirts">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Shirts</h3>
+                    <div class="subcategory-count">56 Products</div>
+                </div>
+            </div>
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1026&q=80"
+                        alt="Pants">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Pants</h3>
+                    <div class="subcategory-count">42 Products</div>
+                </div>
+            </div>
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1583496661160-fb5886a13d77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        alt="Outerwear">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Outerwear</h3>
+                    <div class="subcategory-count">28 Products</div>
+                </div>
+            </div>
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=669&q=80"
+                        alt="Traditional Wear">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Traditional Wear</h3>
+                    <div class="subcategory-count">22 Products</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kids' Collection Subcategories -->
+        <div class="subcategories-grid" id="kids-subcategories">
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80"
+                        alt="Boys' Clothing">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Boys' Clothing</h3>
+                    <div class="subcategory-count">42 Products</div>
+                </div>
+            </div>
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=704&q=80"
+                        alt="Girls' Clothing">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Girls' Clothing</h3>
+                    <div class="subcategory-count">48 Products</div>
+                </div>
+            </div>
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1506629905607-e48b0e67d879?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                        alt="Baby Clothes">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Baby Clothes</h3>
+                    <div class="subcategory-count">32 Products</div>
+                </div>
+            </div>
+            <div class="subcategory-card">
+                <div class="subcategory-img">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb25c5d0d198?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                        alt="Accessories">
+                </div>
+                <div class="subcategory-info">
+                    <h3 class="subcategory-name">Accessories</h3>
+                    <div class="subcategory-count">26 Products</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- All Categories List -->
+    <div class="container">
+        <div class="all-categories">
+            <h2 class="all-categories-title">Complete Categories List</h2>
+            <div class="categories-list">
+                <div class="category-column">
+                    <h3>Women's Wear</h3>
+                    <ul>
+                        <li><a href="#">Dresses <span class="category-count">52</span></a></li>
+                        <li><a href="#">Tops <span class="category-count">48</span></a></li>
+                        <li><a href="#">Skirts <span class="category-count">36</span></a></li>
+                        <li><a href="#">Pants <span class="category-count">32</span></a></li>
+                        <li><a href="#">Traditional Wear <span class="category-count">28</span></a></li>
+                        <li><a href="#">Blouses <span class="category-count">24</span></a></li>
+                        <li><a href="#">Jackets <span class="category-count">20</span></a></li>
+                    </ul>
+                </div>
+                <div class="category-column">
+                    <h3>Men's Wear</h3>
+                    <ul>
+                        <li><a href="#">Shirts <span class="category-count">56</span></a></li>
+                        <li><a href="#">Pants <span class="category-count">42</span></a></li>
+                        <li><a href="#">T-Shirts <span class="category-count">28</span></a></li>
+                        <li><a href="#">Sweaters <span class="category-count">22</span></a></li>
+                        <li><a href="#">Jackets <span class="category-count">18</span></a></li>
+                        <li><a href="#">Traditional Wear <span class="category-count">15</span></a></li>
+                        <li><a href="#">Formal Wear <span class="category-count">12</span></a></li>
+                    </ul>
+                </div>
+                <div class="category-column">
+                    <h3>Kids & Accessories</h3>
+                    <ul>
+                        <li><a href="#">Boys' Clothing <span class="category-count">42</span></a></li>
+                        <li><a href="#">Girls' Clothing <span class="category-count">48</span></a></li>
+                        <li><a href="#">Baby Clothes <span class="category-count">32</span></a></li>
+                        <li><a href="#">Accessories <span class="category-count">45</span></a></li>
+                        <li><a href="#">Scarves <span class="category-count">22</span></a></li>
+                        <li><a href="#">Bags <span class="category-count">18</span></a></li>
+                        <li><a href="#">All Categories <span class="category-count">386</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="container">
+        <div class="section-title">
+            <h2>Featured Products</h2>
+        </div>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                        alt="Cotton Shirt">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-info">
+                    <h3>Premium Cotton Shirt</h3>
+                    <div class="product-price">
+                        <span class="current-price">$45.99</span>
+                        <span class="original-price">$59.99</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80"
+                        alt="Linen Dress">
+                </div>
+                <div class="product-info">
+                    <h3>Elegant Linen Dress</h3>
+                    <div class="product-price">
+                        <span class="current-price">$79.99</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=699&q=80"
+                        alt="Denim Jeans">
+                    <span class="product-badge">Sale</span>
+                </div>
+                <div class="product-info">
+                    <h3>Classic Denim Jeans</h3>
+                    <div class="product-price">
+                        <span class="current-price">$39.99</span>
+                        <span class="original-price">$49.99</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                        alt="Silk Scarf">
+                </div>
+                <div class="product-info">
+                    <h3>Luxury Silk Scarf</h3>
+                    <div class="product-price">
+                        <span class="current-price">$29.99</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with our latest collections, exclusive offers, and fashion tips.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>FabricFashion</h3>
+                    <p>Your one-stop destination for premium quality textiles and fashion clothing for the entire
+                        family.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/mr_parshwa_patil/#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com/mr_parshwa_patil/#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/mr_parshwa_patil/#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="allcategories.html">All Categories</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="return.html">Return Policy</a></li>
+                        <li><a href="sizeguide.html">Size Guide</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i>Patil Galli Borgaon</li>
+                        <li><i class="fas fa-phone"></i> +91 7026670451</li>
+                        <li><i class="fas fa-envelope"></i>fabricfashion@gamil.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 9:00 AM - 11:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 FabricFashion. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // All Categories Page JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            // Category Tabs
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const subcategoryGrids = document.querySelectorAll('.subcategories-grid');
+
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const category = this.getAttribute('data-category');
+
+                    // Remove active class from all tabs and grids
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    subcategoryGrids.forEach(g => g.classList.remove('active'));
+
+                    // Add active class to clicked tab and corresponding grid
+                    this.classList.add('active');
+                    document.getElementById(`${category}-subcategories`).classList.add('active');
+                });
+            });
+
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartCount = document.querySelector('.cart-count');
+            let count = 3;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    count++;
+                    cartCount.textContent = count;
+
+                    // Simple animation
+                    this.textContent = 'Added!';
+                    this.style.backgroundColor = '#4CAF50';
+
+                    setTimeout(() => {
+                        this.textContent = 'Add to Cart';
+                        this.style.backgroundColor = '';
+                    }, 1500);
+                });
+            });
+
+            // Wishlist functionality
+            const wishlistButtons = document.querySelectorAll('.wishlist');
+
+            wishlistButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const icon = this.querySelector('i');
+
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        icon.style.color = '#e74c3c';
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        icon.style.color = '';
+                    }
+                });
+            });
+
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+
+            newsletterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input');
+
+                if (emailInput.value) {
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
