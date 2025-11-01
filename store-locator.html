@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Locator - FabricFashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="storestyle.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-text">
+                <span>Offer Time__ </span>
+            </div>
+            <div class="top-bar-links">
+                <a href="store-locator.html">Store Locator</a>
+                <a href="help.html">Help</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-tshirt"></i>
+                    <h1>Fabric<span>Fashion</span></h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="#"><i class="far fa-user"></i></a>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i><span class="cart-count"></span></a>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero"
+        style="padding:40px 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=80') center/cover;">
+        <div class="container hero-content">
+            <h2>Find a FabricFashion Store Near You</h2>
+            <p>Search locations, view store details, and get directions to our premium textile stores.</p>
+        </div>
+    </section>
+
+    <main class="container locator-page">
+        <div class="locator-grid">
+            <aside class="locator-sidebar">
+                <div class="locator-search">
+                    <input id="storeSearch" placeholder="Search city or postal code" />
+                    <button id="searchBtn" class="btn">Search</button>
+                </div>
+
+                <div id="storeList" class="store-list">
+                    <!-- Sample store items -->
+                    <div class="store-item" data-city="Borgaon">
+                        <h4>FabricFashion Borgaon</h4>
+                        <p>Patil Galli, Borgaon</p>
+                        <p><i class="fas fa-phone"></i> +91 7026670451</p>
+                        <a href="#" class="btn small">Get Directions</a>
+                    </div>
+
+                    <div class="store-item" data-city="Nagpur">
+                        <h4>FabricFashion Nagpur</h4>
+                        <p>Central Market Road, Nagpur</p>
+                        <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                        <a href="#" class="btn small">Get Directions</a>
+                    </div>
+
+                    <div class="store-item" data-city="Pune">
+                        <h4>FabricFashion Pune</h4>
+                        <p>MG Road, Pune</p>
+                        <p><i class="fas fa-phone"></i> +91 9123456780</p>
+                        <a href="#" class="btn small">Get Directions</a>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="locator-map">
+                <div class="map-placeholder">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126743.644!2d-74.0059412!3d40.7127837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v0000000000000"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>FabricFashion</h3>
+                    <p>Your one-stop destination for premium quality textiles and fashion clothing for the
+                        entire family.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/mr_parshwa_patil/#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com/mr_parshwa_patil/#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/mr_parshwa_patil/#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="return.html">Return Policy</a></li>
+                        <li><a href="sizeguide.html">Size Guide</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Patil Galli Borgaon</li>
+                        <li><i class="fas fa-phone"></i> +91 7026670451</li>
+                        <li><i class="fas fa-envelope"></i> fabricfashion@gamil.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 9:00 AM - 11:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 FabricFashion. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Small client-side search that filters the store list by city name or postal code
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('storeSearch');
+            const searchBtn = document.getElementById('searchBtn');
+            const storeItems = Array.from(document.querySelectorAll('.store-item'));
+
+            function filterStores() {
+                const q = searchInput.value.trim().toLowerCase();
+                storeItems.forEach(item => {
+                    const city = (item.dataset.city || '').toLowerCase();
+                    if (!q || city.includes(q) || item.textContent.toLowerCase().includes(q)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            searchBtn.addEventListener('click', filterStores);
+            searchInput.addEventListener('input', filterStores);
+        });
+    </script>
+
+</body>
+
+</html>
